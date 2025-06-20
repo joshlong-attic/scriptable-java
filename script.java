@@ -1,18 +1,24 @@
-//usr/bin/env jbang "$0" "$@" ; exit $?
+//usr/bin/env jbang  "$0" "$@" ; exit $?
 //SOURCES script@scratches
 //PREVIEW
+//DEPS org.springframework.boot:spring-boot-starter-web
 //JAVA 25
 
-import org.springframework.context.annotation.*;
-import org.springframework.boot.*;
-import org.springframework.stereotype.*;
-import org.springframework.boot.autoconfigure.*;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.*;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+@Controller
+@ResponseBody
+static class HelloController {
 
-// FILES src/main/resources/application.properties
-
+    @GetMapping("/hi")
+    Map<String, String> hello() {
+        return Map.of("message", "hi");
+    }
+}
 
 @Component
 static class Runner implements CommandLineRunner {
@@ -25,5 +31,5 @@ static class Runner implements CommandLineRunner {
 
 
 void main(String[] args) {
-    ScriptRun.from(Runner.class).run(args);
+   SpringScript.run(args);
 }
