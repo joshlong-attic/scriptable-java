@@ -29,7 +29,7 @@ static class Runner implements CommandLineRunner {
     }
 }
 
-
+//todo restore the following line
 void main(String[] args) {
-   SpringScript.run(args);
+  // SpringScript.run(args);
 }
