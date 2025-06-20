@@ -4,8 +4,8 @@
 //DEPS org.springframework.boot:spring-boot-starter-web
 //JAVA 25
 
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
+import org.springframework.boot.ApplicationRunner;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -20,16 +20,11 @@ static class HelloController {
     }
 }
 
-@Component
-static class Runner implements CommandLineRunner {
-
-    @Override
-    public void run(String... args) throws Exception {
-        System.out.println("Hello, World!");
-    }
+@Bean
+ApplicationRunner standalone() {
+    return _ -> System.out.println("standalone!");
 }
 
-//todo restore the following line
 void main(String[] args) {
-  // SpringScript.run(args);
+    SpringScript.run(args);
 }
