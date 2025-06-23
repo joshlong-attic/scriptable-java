@@ -8,3 +8,11 @@ You can run this program (`script.java`) by first installing `jbang` (which you 
 ```
 
 Instant Spring Boot app!
+
+If you have the JBang IntelliJ IDEA plugin, you can easily edit this scvript inside of IntelliJ. but, first you'll need to spin up a Maven project like this:
+
+```shell
+jbang export maven script.java
+```
+
+then just run `idea pom.xml` and make changes as you like. Easy!
