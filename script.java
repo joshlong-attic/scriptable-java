@@ -1,7 +1,8 @@
 //usr/bin/env jbang  "$0" "$@" ; exit $?
-//SOURCES script@scratches
+
 //PREVIEW
-//DEPS org.springframework.boot:spring-boot-starter-web
+//DEPS org.springframework.boot:spring-boot-starter-web:3.5.3
+//DEPS https://github.com/scratches/spring-script
 //JAVA 25
 
 import org.springframework.boot.ApplicationRunner;
@@ -22,9 +23,9 @@ static class HelloController {
 
 @Bean
 ApplicationRunner standalone() {
-    return _ -> System.out.println("standalone!");
+    return _ -> System.out.println("standalone!!!");
 }
 
-void main(String[] args) {
-    SpringScript.run(args);
+void main() {
+    SpringScript.run();
 }
