@@ -1,9 +1,8 @@
 //usr/bin/env jbang  "$0" "$@" ; exit $?
-
+//JAVA 25
 //PREVIEW
 //DEPS org.springframework.boot:spring-boot-starter-web:3.5.3
 //DEPS https://github.com/scratches/spring-script
-//JAVA 25
 
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Bean;
